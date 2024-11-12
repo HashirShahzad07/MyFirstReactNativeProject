@@ -1,30 +1,44 @@
 {
   "expo": {
-    "name": "MyFirstReactNativeProject",
-    "slug": "MyFirstReactNativeProject",
+    "name": "YourAppName",
+    "slug": "your-app-name",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./path/to/your/app/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./path/to/your/app/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./path/to/your/app/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./path/to/your/app/favicon.png"
+    },
+    "description": "Your app description.",
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "your-organization",
+            "project": "your-project",
+            "authToken": "your-auth-token"
+          }
+        }
+      ]
+    },
+    "privacy": "public"
   }
 }
